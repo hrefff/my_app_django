@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+{% block title %}Add Article{% endblock title %}
+{% block content %}
+<a class="btn btn-dark disabled" href="{% url 'add_article' %}"> + Add new article</a>
+
+<div class="pt-4">
+<h2>Add new Article</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-outline-success">Add</button>
+</form>
+</div>
+{% endblock content %}
